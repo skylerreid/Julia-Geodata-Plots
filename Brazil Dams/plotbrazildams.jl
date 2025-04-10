@@ -1,5 +1,5 @@
 using CSV, DataFrames, Plots, ColorSchemes, Shapefile, Statistics
-filename = "C:\\Users\\skyle\\OneDrive - Montana State University\\EELE 487\\1_DDSA_Dam Information.csv"
+filename = "filepath to your csv"
 
 data = CSV.read(filename, DataFrame; delim = ',')
 latitudes = data[1:end, 4]
@@ -12,7 +12,7 @@ latitudes = latitudes[mask1]
 longitudes = longitudes[mask1]
 sizes = sizes[mask1]
 
-shp = Shapefile.Table("C:\\Users\\skyle\\OneDrive - Montana State University\\EELE 491\\data\\ne_110m_admin_0_countries.shp")
+shp = Shapefile.Table("filepath to your shp")
 df = DataFrame(shp)
 
 p1 = plot(aspect_ratio=:equal)  # set equal to avoid weird scaling issue
